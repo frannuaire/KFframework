@@ -1,0 +1,8 @@
+{
+    "autoload": {
+        "psr-4": { "Kfframework\\": ["src/", "models/", "views/", "controllers/"] }
+    },
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
