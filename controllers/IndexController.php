@@ -5,7 +5,7 @@ namespace Kfframework;
  *
  * @author Kevin FERRANDON
  */
-class IndexController {
+class IndexController extends abstractController{
     
     
     public function index(){
