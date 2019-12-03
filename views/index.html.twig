@@ -2,6 +2,17 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-<h1>KFFramework</h1>
-Bienvenue dans KFFramework un petit framework MCV a but pédagogique.
+    <div class="container">   
+        <head><h1>KFFramework</h1>
+        Bienvenue dans KFFramework un petit framework MCV a but pédagogique.
+    </head>
+    <section>
+        <article>
+            <div class="row"><div class="col-lg-6 col-lm-6 col-sm-12"><figure><img src="./assets/img/mvc.png"></img><legend>Architecture MVC</legend></figure></div>
+                <div class="col-lg-6 col-lm-6 col-sm-12"><figure><img src="./assets/img/folders.png"></img><legend>Arborescence fichiers</legend></figure></div></div>
+            Approche MVC avec PSR-4, Abstraction et héritage, installation de dépendances avec composer (pour le moteur de template TWIG).
+            Mise en forme avec Bootstrap.
+        </article>
+    </section>
+</div>
 {% endblock %}

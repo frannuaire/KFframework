@@ -1,7 +1,7 @@
 <?php
 namespace Kfframework;
 /**
- * Description of IndexController
+ * Controller par défault qui étend AbstractController
  *
  * @author Kevin FERRANDON
  */
