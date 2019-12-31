@@ -20,14 +20,19 @@ class Request {
      */
     public function setMethode(){
         $this->methode = $_SERVER['REQUEST_METHOD'];
-        switch ($this->methode) {
-            case 'GET': $this->request = &$_GET;
+       
+            $this->request['GET'] = &$_GET;
+            $this->request['POST'] = &$_POST;
+        
+        
+    /*    switch ($this->methode) {
+            case 'GET': 
                 break;
             case 'POST': $this->request = &$_POST;
                 break;
 
             default:
-        }
+        }*/
         // var_dump($this->request);die;
     }
     
@@ -35,7 +40,7 @@ class Request {
      * 
      * @return string
      */
-    public function getMethode() {   
+    public static function getMethode() {   
         return $this->methode;
     }
     
@@ -44,10 +49,10 @@ class Request {
      * @return string
      */
     public function getPage(){
-        if(!isset($this->request['page'])){
+        if(!isset($this->request['GET']['page'])){
             return 'index';
         }
-        return $this->request['page'];
+        return $this->request['GET']['page'];
     }
     
     /**
@@ -55,10 +60,10 @@ class Request {
      * @return string
      */
     public function getAction(){
-        if(!isset($this->request['action'])){
+        if(!isset($this->request['GET']['action'])){
             return 'index';
         }
-        return $this->request['action'];  
+        return $this->request['GET']['action'];  
     }
     /**
      * recupere l'url
@@ -72,6 +77,14 @@ class Request {
      */
     public function getUrl(){
         return $this->url;
+    }
+
+        
+    /**
+     * @return Object
+     */
+    public function getRequest(){
+        return $this->request;
     }
 
 }

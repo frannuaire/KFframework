@@ -1,6 +1,6 @@
 {
     "autoload": {
-        "psr-4": { "Kfframework\\": ["src/", "models/", "views/", "controllers/"] }
+        "psr-4": { "Kfframework\\": ["src/", "models/", "models/entity/",  "views/", "controllers/"] }
     },
     "require": {
         "twig/twig": "^2.0"

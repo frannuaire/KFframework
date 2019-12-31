@@ -9,15 +9,16 @@ $request = new Kfframework\Request();
 
 // Construction des chemins des controllers et vues
 $ctrl = 'Kfframework\\' . $request->getPage() . 'Controller';
-$viewPath = 'views\\' . $request->getPage().'.html.twig';
-$view =  $request->getPage().'.html.twig';
+$viewPath = 'views\\' . $request->getPage().'\\';
+$view =  $request->getPage().'\\'.$request->getAction().'.html.twig';
 
 /* Si la class, l'action ou la vue n'existe pas on lève une exception
 Vous pourriez renvoyer vers une page 404 par exemple.
  *  */ 
+
 if (class_exists($ctrl)) {
     // J'instancie mon controller
-    $controller = new $ctrl();
+    $controller = new $ctrl($request);
     
     //Je test que l'action du controller Existe.
     if (method_exists($ctrl, $request->getAction())) {
