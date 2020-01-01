@@ -11,11 +11,13 @@ abstract class abstractController {
 
     protected $modelName;
     protected $model;
+    protected $request;
 
     /**
      * Constructeur
      */
-    public function __construct() {
+    public function __construct($request) {
+        $this->request=$request;
         $this->setModel();
     }
 

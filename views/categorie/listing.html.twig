@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+{% block title %}{{title}}{% endblock %}
+
+{% block content %}
+    <div class="container">   
+        <head><h1>KFFramework</h1>
+        Bienvenue dans KFFramework un petit framework MCV a but pédagogique.
+    </head>
+    <section>
+        <article>
+            <table class="table">
+                <thead><tr><td>Nom</td><td>Slug</td></tr></thead>
+                <tbody>
+            {% for cat in categories %}
+                <tr><td>{{ cat.nom|raw }}</td><td>{{ cat.slug }}</td> </tr>  
+    {% endfor %} </table>
+        </article>
+    </section>
+</div>
+{% endblock %}
