@@ -17,7 +17,9 @@ class CategorieController extends abstractController{
         $categories =$this->model->selectAll();
     //    $categories =$this->model->findById(2);
        
-        return Array('categories'=>$categories);
+        return Array('categories'=>$categories,
+            'title'=>'Catégorie'
+            );
     }
     /**
      * Formulaire d'ajout pour la catégorie.
