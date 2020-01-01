@@ -35,6 +35,8 @@ class CategorieController extends abstractController{
         $categorie = $this->request->getRequest()['POST'];
         if(empty($categorie['idCategories'])){
             //todo: Insert
+            $this->model->insert($categorie);
+            header('Location: ./index.php?page=categorie&action=listing');
         }else{
             //todo: Update
         }

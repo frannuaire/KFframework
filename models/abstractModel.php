@@ -32,10 +32,33 @@ abstract class abstractModel {
     }
 
     public function findById($id) {
-    //    var_dump('SELECT * from ' . $this->entity->getTable().' where '.$this->entity->getPrimaryKey().' = '.$id);
+        //    var_dump('SELECT * from ' . $this->entity->getTable().' where '.$this->entity->getPrimaryKey().' = '.$id);
         if (!empty($this->entity->getTable())) {
-            return $this->db->query('SELECT * from ' . $this->entity->getTable().' where '.$this->entity->getPrimaryKey().' = '.$id);
+            return $this->db->query('SELECT * from ' . $this->entity->getTable() . ' where ' . $this->entity->getPrimaryKey() . ' = ' . $id);
         }
+    }
+
+    /**
+     * Insert des données en BDD
+     * @param Array $data
+     * @return int
+     */
+    public function insert($data) {
+        $col = [];
+        $val = array();
+        $req = "insert into " . $this->entity->getTable() . " (";
+        foreach ($data as $key => $value) {
+            if (!empty($value)) {
+                array_push($col, $key);
+                array_push($val, "'$value'");
+            }
+        }
+        $req .= implode(',', $col) . ') ';
+        $req .= " values(". implode(",", $val) . ")";
+      //   var_dump($req);die;
+         return $this->db->exec($req);
+       /*  var_dump($req);
+        die;*/
     }
 
 }
