@@ -3,6 +3,6 @@
         "psr-4": { "Kfframework\\": ["src/", "models/", "models/entity/",  "views/", "controllers/"] }
     },
     "require": {
-        "twig/twig": "^2.0"
+        "twig/twig": "^3.11"
     }
 }
